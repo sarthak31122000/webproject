@@ -2,6 +2,7 @@ const express = require("express");
 
 const bodyParser = require("body-parser");
 
+const port=process.env.PORT || 3000;
 const app = express();
 
 var items=["Buy food","cook food","eat food"];
@@ -79,6 +80,6 @@ app.post("/work",function(req,res){
   workItems.push(item);
   res.redirect("/work");
 })
-app.listen(3000, function() {
+app.listen(port, function() {
   console.log("server running on port 3000");
 });
